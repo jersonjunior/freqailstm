@@ -7,7 +7,7 @@
     "tradable_balance_ratio": 0.9,
     "dry_run_wallet": 100,
     "fiat_display_currency": "USD",
-    "strategy": "ExampleLSTMStrategy",
+    "strategy": "AlexStrategyFinalV9",
     "freqaimodel": "PyTorchLSTMRegressor",
     "dataformat_ohlcv": "json",
     "dataformat_trades": "jsongz",
