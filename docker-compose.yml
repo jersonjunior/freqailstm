@@ -5,6 +5,7 @@ services:
     container_name: freqtrade
     volumes:
       - "./user_data:/freqtrade/user_data"
+      - "./init.sh:/freqtrade/init.sh"  # Mapeia o script para o contêiner
     ports:
       - "0.0.0.0:8080:8080"
     entrypoint: ["/bin/sh", "/freqtrade/init.sh"]
