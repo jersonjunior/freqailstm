@@ -30,6 +30,7 @@ services:
       - "0.0.0.0:8080:8080"
     # Default command used when running `docker compose up`
     command: >
+      sh -c "chmod 777 /freqtrade/user_data/logs/freqtrade.log &&
       trade
       --logfile /freqtrade/user_data/logs/freqtrade.log
       --db-url sqlite:////freqtrade/user_data/tradesv3.sqlite
