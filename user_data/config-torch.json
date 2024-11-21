@@ -1,4 +1,5 @@
 {
+    "dry_run": true,
     "trading_mode": "futures",
     "margin_mode": "isolated",
     "max_open_trades": 5,
@@ -7,13 +8,12 @@
     "tradable_balance_ratio": 0.9,
     "dry_run_wallet": 100,
     "fiat_display_currency": "USD",
-    "strategy": "ExampleLSTMStrategy",
+    //"strategy": "ExampleLSTMStrategy",
     "freqaimodel": "PyTorchLSTMRegressor",
     "dataformat_ohlcv": "json",
     "dataformat_trades": "jsongz",
     "timeframe": "15m",
     "stoploss_on_exchange": true,
-    "dry_run": false,
     "cancel_open_orders_on_exit": false,
     "unfilledtimeout": {
         "unit": "minutes",
