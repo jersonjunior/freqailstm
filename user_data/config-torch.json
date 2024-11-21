@@ -4,7 +4,7 @@
     "margin_mode": "isolated",
     "max_open_trades": 5,
     "stake_currency": "USDT",
-    "stake_amount": 2,
+    "stake_amount": 10,
     "tradable_balance_ratio": 0.9,
     "dry_run_wallet": 100,
     "fiat_display_currency": "USD",
