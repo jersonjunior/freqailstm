@@ -12,6 +12,7 @@ WORKDIR /opt/freqai-lstm
 RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
   && cp config/config-torch.json /freqtrade/user_data/config-torch.json \
   && cp V9/AlexStrategyFinalV90Hyper.py /freqtrade/user_data/strategies/ \
+  && cp V9/TGDF.py /freqtrade/user_data/strategies/ \
   && cp torch/BasePyTorchModel.py /freqtrade/freqtrade/freqai/base_models/ \
   && cp torch/PyTorchLSTMModel.py /freqtrade/freqtrade/freqai/torch/ \
   && cp torch/PyTorchModelTrainer.py /freqtrade/freqtrade/freqai/torch/ \
