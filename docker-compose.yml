@@ -1,7 +1,7 @@
 ---
 services:
   freqtrade:
-    image: alexfreqai:latest
+    image: freqtradeorg/freqtrade:latest
     # image: freqtradeorg/freqtrade:develop
     # Use plotting image
     # image: freqtradeorg/freqtrade:develop_plot
@@ -34,4 +34,4 @@ services:
       --logfile /freqtrade/user_data/logs/freqtrade.log
       --db-url sqlite:////freqtrade/user_data/tradesv3.sqlite
       --config /freqtrade/user_data/config-torch.json
-      --strategy AlexStrategyFinalV9
+      --strategy AlexStrategyFinalV9Hyper
