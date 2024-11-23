@@ -5,7 +5,7 @@ import math
 import freqtrade.vendor.qtpylib.indicators as qtpylib
 import logging
 from functools import reduce
-from typing import Dict
+from typing import List, Dict
 from datetime import timedelta, datetime, timezone
 from freqtrade.persistence import Trade
 from pandas import DataFrame, Series
