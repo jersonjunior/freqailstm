@@ -8,7 +8,8 @@
     "dry_run_wallet": 1000,
     "fiat_display_currency": "USD",
     "strategy": "NOTankAi_15",
-    "freqaimodel": "PyTorchLSTMRegressor",
+    //"freqaimodel": "PyTorchLSTMRegressor",
+    "freqaimodel": "LightGBMRegressor"
     "dataformat_ohlcv": "json",
     "dataformat_trades": "jsongz",
     "timeframe": "15m",
