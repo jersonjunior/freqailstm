@@ -184,6 +184,7 @@
                 "ETH/USDT:USDT"
             ],
             "include_timeframes": [
+                "5m",
                 "15m",
                 "1h",
                 "4h"
