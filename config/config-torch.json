@@ -9,7 +9,7 @@
     "fiat_display_currency": "USD",
     "strategy": "NOTankAi_15",
     //"freqaimodel": "PyTorchLSTMRegressor",
-    "freqaimodel": "LightGBMRegressor"
+    "freqaimodel": "LightGBMRegressor",
     "dataformat_ohlcv": "json",
     "dataformat_trades": "jsongz",
     "timeframe": "15m",
