@@ -12,7 +12,7 @@ WORKDIR /opt/freqai-lstm
 RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
   && cp config/config-torch.json /freqtrade/user_data/config-torch.json \
   && cp config/config_ai.json /freqtrade/user_data/config_ai.json \
-  && cp config/config-TankAiRevival-PC.json /freqtrade/user_data/config-TankAiRevival-PC.json
+  && cp config/config-TankAiRevival-PC.json /freqtrade/user_data/config-TankAiRevival-PC.json \
   && cp config/config_backtesting_notankai.json /freqtrade/user_data/config_backtesting_notankai.json \
   && cp V9/AlexBTStrategyFinalV93.py /freqtrade/user_data/strategies/ \
   && cp V9/TankAiRevival.py /freqtrade/user_data/strategies/ \
