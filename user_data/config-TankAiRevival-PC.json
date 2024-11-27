@@ -4,7 +4,7 @@
     "stake_amount": 100,
     "dry_run_wallet": 510,
     "dry_run": true,
-    "strategy": "YourStrategy",
+    "strategy": "TankAiRevival",
     "freqai": {
         "enabled": true,
         "conv_width": 1,
@@ -95,7 +95,7 @@
     "backtest": {
         "start_date": "2023-01-01",
         "end_date": "2023-12-31",
-        "timeframe": "5m",
+        "timeframe": "30m",
         "export": true,
         "export_path": "user_data/backtest_results/"
     }
