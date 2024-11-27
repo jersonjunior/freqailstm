@@ -4,7 +4,7 @@
     "stake_amount": 100,
     "dry_run_wallet": 510,
     "dry_run": true,
-    "strategy": "YourStrategy",
+    "strategy": "TankAiRevival",
     "freqai": {
         "enabled": true,
         "conv_width": 1,
