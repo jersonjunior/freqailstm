@@ -17,7 +17,7 @@ RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
   && cp V9/AlexBTStrategyFinalV93.py /freqtrade/user_data/strategies/ \
   && cp V9/TankAiRevival.py /freqtrade/user_data/strategies/ \
   && cp V9/NOTankAi_15.py /freqtrade/user_data/strategies/ \
-  #&& cp V9/TGDF.py /freqtrade/user_data/strategies/ \
+  && cp V9/TGDF.py /freqtrade/user_data/strategies/ \
   && cp torch/BasePyTorchModel.py /freqtrade/freqtrade/freqai/base_models/ \
   && cp torch/PyTorchLSTMModel.py /freqtrade/freqtrade/freqai/torch/ \
   && cp torch/PyTorchModelTrainer.py /freqtrade/freqtrade/freqai/torch/ \
