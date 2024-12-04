@@ -178,6 +178,14 @@
         "save_backtest_models": true,
         "write_metrics_to_disk": true,
         "activate_tensorboard": false,
+        "extra_returns_per_train": {
+            "DI_value_param1": 0,
+            "DI_value_param2": 0,
+            "DI_value_param3": 0,
+            "DI_cutoff": 2,
+            "&s-minima_sort_threshold": -1,
+            "&s-maxima_sort_threshold": 1
+        },
         "feature_parameters": {
             "include_corr_pairlist": [
                 "BTC/USDT:USDT",
