@@ -180,8 +180,8 @@
         "activate_tensorboard": false,
         "feature_parameters": {
             "include_corr_pairlist": [
-                "BTC/USDT:USDT"
-                //"ETH/USDT:USDT"
+                "BTC/USDT:USDT",
+                "ETH/USDT:USDT"
             ],
             "include_timeframes": [
                 "15m"
