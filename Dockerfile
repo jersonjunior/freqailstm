@@ -40,4 +40,4 @@ RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
     && cp V9/* /freqtrade/user_data/strategies/
 
 # Default command to start in 'trade' mode
-CMD ["trade", "--logfile", "/freqtrade/user_data/logs/freqtrade.log", "--db-url", "sqlite:////freqtrade/user_data/tradesv3.sqlite", "--config", "/freqtrade/user_data/config-torch.json", "--strategy", "AlexStrategyFinalV9"]
+CMD ["trade", "--logfile", "/freqtrade/user_data/logs/freqtrade.log", "--db-url", "sqlite:////freqtrade/user_data/tradesv3.sqlite", "--config", "/freqtrade/user_data/config-torch.json", "--strategy", "TankAiRevival"]
