@@ -10,7 +10,7 @@ ADD --keep-git-dir=true https://github.com/jersonjunior/freqailstm.git /opt/freq
 WORKDIR /opt/freqai-lstm
 
 RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
-  && cp V9/config-tankai.json /freqtrade/user_data/config-torch.json \
+  && cp config/config-tankai.json /freqtrade/user_data/config-torch.json \
   && cp V9/TankAiRevivalFuturesNew.py /freqtrade/user_data/strategies/ \
   #&& cp torch/BasePyTorchModel.py /freqtrade/freqtrade/freqai/base_models/ \
   #&& cp torch/PyTorchLSTMModel.py /freqtrade/freqtrade/freqai/torch/ \
