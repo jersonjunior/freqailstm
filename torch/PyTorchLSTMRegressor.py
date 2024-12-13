@@ -1,4 +1,4 @@
-from typing import Dict, Any
+from typing import Any
 
 import torch
 
@@ -41,8 +41,8 @@ class PyTorchLSTMRegressor(BasePyTorchRegressor):
         config = self.freqai_info.get("model_training_parameters", {})
         
         self.learning_rate: float = config.get("learning_rate", 3e-3)
-        self.model_kwargs: Dict[str, Any] = config.get("model_kwargs", {})
-        self.trainer_kwargs: Dict[str, Any] = config.get("trainer_kwargs", {})
+        self.model_kwargs: dict[str, Any] = config.get("model_kwargs", {})
+        self.trainer_kwargs: dict[str, Any] = config.get("trainer_kwargs", {})
         self.window_size = self.model_kwargs.get('window_size', 5)
 
         # Validate parameters
@@ -56,7 +56,7 @@ class PyTorchLSTMRegressor(BasePyTorchRegressor):
         if not isinstance(self.window_size, int) or self.window_size <= 0:
             raise ValueError(f"Invalid window size: {self.window_size}")
 
-    def fit(self, data_dictionary: Dict, dk: FreqaiDataKitchen, **kwargs) -> Any:
+    def fit(self, data_dictionary: dict, dk: FreqaiDataKitchen, **kwargs) -> Any:
         """
         Train the LSTM model using the provided data.
 
@@ -66,17 +66,29 @@ class PyTorchLSTMRegressor(BasePyTorchRegressor):
         """
         try:
             n_features = data_dictionary["train_features"].shape[-1]
-            model = PyTorchLSTMModel(input_dim=n_features, output_dim=1, **self.model_kwargs)
+            model = PyTorchLSTMModel(input_dim=n_features, **self.model_kwargs)
             model.to(self.device)
 
             optimizer = torch.optim.AdamW(model.parameters(), lr=self.learning_rate)
             criterion = torch.nn.MSELoss(reduction='mean')
 
-            trainer = self.get_init_model(dk.pair)
-            if trainer is None:
+            temp_trainer = self.get_init_model(dk.pair)
+            if temp_trainer is None:
                 trainer = PyTorchLSTMTrainer(
                     model=model,
                     optimizer=optimizer,
+                    criterion=criterion,
+                    device=self.device,
+                    data_convertor=self.data_convertor,
+                    tb_logger=self.tb_logger,
+                    window_size=self.window_size,
+                    **self.trainer_kwargs,
+                )
+            else:
+                trainer = PyTorchLSTMTrainer(
+                    model=temp_trainer.model,
+                    optimizer=temp_trainer.optimizer,
+                    model_meta_data=temp_trainer.model_meta_data,
                     criterion=criterion,
                     device=self.device,
                     data_convertor=self.data_convertor,
