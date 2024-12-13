@@ -59,7 +59,33 @@
         },
         "pair_whitelist": [
             "BTC/USDT:USDT",
-            "ETH/USDT:USDT"
+            "ETH/USDT:USDT",
+            "1000PEPE/USDT:USDT",
+            "SOL/USDT:USDT",
+            "PEOPLE/USDT:USDT",
+            "ETHFI/USDT:USDT",
+            "EDU/USDT:USDT",
+            "ETC/USDT:USDT",
+            "XRP/USDT:USDT",
+            "1000BONK/USDT:USDT",
+            "BNB/USDT:USDT",
+            "WIF/USDT:USDT",
+            "ARB/USDT:USDT",
+            "ENA/USDT:USDT",
+            "OP/USDT:USDT",
+            "NEAR/USDT:USDT",
+            "WLD/USDT:USDT",
+            "ENS/USDT:USDT",
+            "BOME/USDT:USDT",
+            "ORDI/USDT:USDT",
+            "AVAX/USDT:USDT",
+            "ONDO/USDT:USDT",
+            "LINK/USDT:USDT",
+            "LDO/USDT:USDT",
+            "FIL/USDT:USDT",
+            "ADA/USDT:USDT",
+            "GALA/USDT:USDT",
+            "1000FLOKI/USDT:USDT"
         ],
         "pair_blacklist": []
     },
@@ -142,12 +168,12 @@
         },
         "feature_parameters": {
             "include_corr_pairlist": [
-
+                "BTC/USDT:USDT",
+                "ETH/USDT:USDT"
             ],
             "include_timeframes": [
-                "5m",
-                "15m",
-                "30m"
+                "15m"
+
             ],
             "label_period_candles": 16,
             "indicator_periods_candles": [
