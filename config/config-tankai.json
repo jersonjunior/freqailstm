@@ -8,7 +8,7 @@
     "dry_run_wallet": 1000,
     "fiat_display_currency": "USD",
     "strategy": "TankAiRevival",
-    "freqaimodel": "PyTorchLSTMRegressorCuda",
+    "freqaimodel": "PyTorchLSTMRegressor",
     "dataformat_ohlcv": "feather",
     "dataformat_trades": "jsongz",
     "stoploss_on_exchange": true,
