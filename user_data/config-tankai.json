@@ -45,12 +45,12 @@
         "order_book_top": 1
     },
     "exchange": {
-        "name": "okx",
+        "name": "binance",
         "key": "",
         "secret": "",
         "ccxt_config": {
-            "httpsProxy": "http://127.0.0.1:7890",
-            "enableRateLimit": true
+            //"httpsProxy": "http://127.0.0.1:7890",
+            "enableRateLimit": true,
         },
         "ccxt_async_config": {
             "aiohttp_trust_env": true,
