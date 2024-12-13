@@ -172,7 +172,7 @@
                 "ETH/USDT:USDT"
             ],
             "include_timeframes": [
-                "15m"
+                "30m"
 
             ],
             "label_period_candles": 16,
