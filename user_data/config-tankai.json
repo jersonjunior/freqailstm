@@ -146,8 +146,8 @@
             ],
             "include_timeframes": [
                 "5m",
-                "30m",
-                "4h"
+                "15m",
+                "30m"
             ],
             "label_period_candles": 16,
             "indicator_periods_candles": [
