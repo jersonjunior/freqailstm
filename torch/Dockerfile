@@ -12,16 +12,12 @@ WORKDIR /opt/freqai-lstm
 RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
   && cp config/config-tankai.json /freqtrade/user_data/config-torch.json \
   && cp V9/TankAiRevivalFuturesNew.py /freqtrade/user_data/strategies/ \
-  #&& cp torch/BasePyTorchModel.py /freqtrade/freqtrade/freqai/base_models/ \
-  #&& cp torch/PyTorchLSTMModel.py /freqtrade/freqtrade/freqai/torch/ \
-  #&& cp torch/PyTorchModelTrainer.py /freqtrade/freqtrade/freqai/torch/ \
-  #&& cp torch/PyTorchLSTMRegressor.py /freqtrade/user_data/freqaimodels/
   && cp torch/PyTorchLSTMRegressor.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/PyTorchModelTrainer.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/BasePyTorchRegressor.py /freqtrade/user_data/freqaimodels/
 
 WORKDIR /freqtrade
-#RUN sed -i "s/5m/1h/" freqtrade/configuration/config_validation.py
+RUN sed -i "s/5m/1h/" freqtrade/configuration/config_validation.py
 USER ftuser
 
 RUN  pip install -e .
