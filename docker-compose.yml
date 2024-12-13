@@ -1,7 +1,7 @@
 ---
 services:
   freqtrade:
-    image: alexfreqai:latest
+    image: freqai
     # image: freqtradeorg/freqtrade:develop
     # Use plotting image
     # image: freqtradeorg/freqtrade:develop_plot
