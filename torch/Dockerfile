@@ -22,7 +22,7 @@ RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
   && cp tensorflow/PyTorchLSTMRegressor.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/BasePyLSTMTorchModel.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/BasePyLSTMTorchRegressor.py /freqtrade/user_data/freqaimodels/ \
-  && cp torch/BasePyLSTMTorchRegressor.py /freqtrade/user_data/freqaimodels/ 
+  && cp torch/PyTorchLSTMTransformerRegressor /freqtrade/user_data/freqaimodels/ 
   
 WORKDIR /freqtrade
 #RUN sed -i "s/5m/1h/" freqtrade/configuration/config_validation.py
