@@ -19,7 +19,7 @@ RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
   && cp torch/PyTorchLSTMTransformerTrainer.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/PyTorchTrainerInterface.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/datasets.py /freqtrade/user_data/freqaimodels/ \
-  && cp tensorflow/PyTorchLSTMRegressor.py /freqtrade/user_data/freqaimodels/ \
+  && cp torch/PyTorchLSTMRegressor.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/BasePyLSTMTorchModel.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/BasePyLSTMTorchRegressor.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/PyTorchLSTMTransformerRegressor.py /freqtrade/user_data/freqaimodels/ 
