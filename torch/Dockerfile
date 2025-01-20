@@ -13,15 +13,19 @@ RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
   && cp user_data/config-tankai.json /freqtrade/user_data/config-torch.json \
   && cp user_data/strategies/TankAiRevivalFuturesNew.py /freqtrade/user_data/strategies/ \
   && cp torch/PyTorchDataConvertor.py /freqtrade/user_data/freqaimodels/ \
-  && cp torch/PyTorchLSTMModel.py /freqtrade/user_data/freqaimodels/ \
-  && cp torch/PyTorchLSTMModelTrainer.py /freqtrade/user_data/freqaimodels/ \
+  #model
+  && cp torch/PyTorchLSTMModel.py /freqtrade/freqtrade/freqai/torch/ \
+  #torch
+  && cp torch/PyTorchLSTMModelTrainer.py /freqtrade/freqtrade/freqai/torch// \
+  #
   && cp torch/PyTorchLSTMTrainer.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/PyTorchLSTMTransformerTrainer.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/PyTorchTrainerInterface.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/datasets.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/PyTorchLSTMRegressor.py /freqtrade/user_data/freqaimodels/ \
-  && cp torch/BasePyLSTMTorchModel.py /freqtrade/user_data/freqaimodels/ \
-  && cp torch/BasePyLSTMTorchRegressor.py /freqtrade/user_data/freqaimodels/ \
+  #Base
+  && cp torch/BasePyLSTMTorchModel.py /freqtrade/freqtrade/freqai/base_models/ \
+  && cp torch/BasePyLSTMTorchRegressor.py /freqtrade/freqtrade/freqai/base_models/ \
   && cp torch/PyTorchLSTMTransformerRegressor.py /freqtrade/user_data/freqaimodels/ 
   
 WORKDIR /freqtrade
