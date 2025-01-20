@@ -23,9 +23,10 @@ RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
   && cp torch/PyTorchTrainerInterface.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/datasets.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/PyTorchLSTMRegressor.py /freqtrade/user_data/freqaimodels/ \
-  #Base
+  #Base Model
   && cp torch/BasePyLSTMTorchModel.py /freqtrade/freqtrade/freqai/base_models/ \
   && cp torch/BasePyLSTMTorchRegressor.py /freqtrade/freqtrade/freqai/base_models/ \
+  #
   && cp torch/PyTorchLSTMTransformerRegressor.py /freqtrade/user_data/freqaimodels/ 
   
 WORKDIR /freqtrade
