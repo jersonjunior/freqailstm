@@ -12,11 +12,11 @@ WORKDIR /opt/freqai-lstm
 RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
   && cp user_data/config-tankai.json /freqtrade/user_data/config-torch.json \
   && cp user_data/strategies/TankAiRevivalFuturesNew.py /freqtrade/user_data/strategies/ \
-  && cp torch/PyTorchDataConvertor.py /freqtrade/user_data/freqaimodels/ \
+  && cp torch/PyTorchDataConvertor.py/freqtrade/freqtrade/freqai/torch/ \
   #model
   && cp torch/PyTorchLSTMModel.py /freqtrade/freqtrade/freqai/torch/ \
   #torch
-  && cp torch/PyTorchLSTMModelTrainer.py /freqtrade/freqtrade/freqai/torch// \
+  && cp torch/PyTorchLSTMModelTrainer.py /freqtrade/freqtrade/freqai/torch/ \
   #
   && cp torch/PyTorchLSTMTrainer.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/PyTorchLSTMTransformerTrainer.py /freqtrade/user_data/freqaimodels/ \
