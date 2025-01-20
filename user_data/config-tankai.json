@@ -45,7 +45,7 @@
         "order_book_top": 1
     },
     "exchange": {
-        "name": "okx",
+        "name": "binance",
         "key": "",
         "secret": "",
         "ccxt_config": {
@@ -56,15 +56,11 @@
             "rateLimit": 150
         },
         "pair_whitelist": [
-            "RSR/USDT:USDT",
             "TURBO/USDT:USDT",
             "PEPE/USDT:USDT",
-            "TNSR/USDT:USDT",
             "DOGE/USDT:USDT",
-            "W/USDT:USDT",
             "SUI/USDT:USDT",
             "ETH/USDT:USDT",
-            "FOXY/USDT:USDT",
             "BTC/USDT:USDT"
         ],
         "pair_blacklist": [
