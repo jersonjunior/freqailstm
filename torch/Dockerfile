@@ -15,10 +15,10 @@ RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
   && cp torch/PyTorchDataConvertor.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/PyTorchLSTMModel.py /freqtrade/user_data/freqaimodels/ \
   && cp torch/PyTorchLSTMModelTrainer.py /freqtrade/user_data/freqaimodels/
-  && cp torch/PyTorchLSTMTrainer.py /freqtrade/user_data/freqaimodels/
-  && cp torch/PyTorchLSTMTransformerTrainer.py /freqtrade/user_data/freqaimodels/
-  && cp torch/PyTorchTrainerInterface.py /freqtrade/user_data/freqaimodels/
-  && cp torch/datasets.py /freqtrade/user_data/freqaimodels/
+  && cp torch/PyTorchLSTMTrainer.py /freqtrade/user_data/freqaimodels/ \
+  && cp torch/PyTorchLSTMTransformerTrainer.py /freqtrade/user_data/freqaimodels/ \
+  && cp torch/PyTorchTrainerInterface.py /freqtrade/user_data/freqaimodels/ \
+  && cp torch/datasets.py /freqtrade/user_data/freqaimodels/ \
 
 WORKDIR /freqtrade
 #RUN sed -i "s/5m/1h/" freqtrade/configuration/config_validation.py
