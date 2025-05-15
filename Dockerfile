@@ -1,6 +1,6 @@
 # Use Freqtrade's base image for FreqAI RL
-FROM freqtradeorg/freqtrade:develop
-#FROM freqtradeorg/freqtrade:stable_freqairl
+#FROM freqtradeorg/freqtrade:develop
+FROM freqtradeorg/freqtrade:stable_freqairl
 
 # Set user to root for installing additional dependencies
 USER root
