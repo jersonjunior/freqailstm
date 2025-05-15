@@ -1,8 +1,8 @@
 ---
 services:
   freqtrade:
-    #image: freqai
-    image: freqtradeorg/freqtrade:develop
+    image: freqai
+    #image: freqtradeorg/freqtrade:develop
     # Use plotting image
     # image: freqtradeorg/freqtrade:develop_plot
     # # Enable GPU Image and GPU Resources (only relevant for freqAI)
