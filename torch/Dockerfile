@@ -6,6 +6,12 @@ USER root
 RUN apt-get update \
   && apt-get -y install build-essential libssl-dev git libffi-dev libgfortran5 pkg-config cmake gcc
 
+# Install additional Python dependencies via pip
+RUN pip install --no-cache-dir optuna \
+  && pip install --no-cache-dir torch \
+  && pip install --no-cache-dir sb3_contrib \
+  && pip install --no-cache-dir datasieve
+
 ADD --keep-git-dir=true https://github.com/jersonjunior/freqailstm.git /opt/freqai-lstm
 WORKDIR /opt/freqai-lstm
 
