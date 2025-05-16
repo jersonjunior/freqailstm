@@ -1,8 +1,8 @@
 ---
 services:
   freqtrade:
-    #image: freqai
-    image: freqtradeorg/freqtrade:develop_freqairl
+    image: freqai
+    #image: freqtradeorg/freqtrade:develop_freqairl
     #image: freqtradeorg/freqtrade:develop
     # Use plotting image
     # image: freqtradeorg/freqtrade:develop_plot
