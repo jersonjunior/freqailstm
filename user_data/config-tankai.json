@@ -7,7 +7,7 @@
     "tradable_balance_ratio": 0.999,
     "dry_run_wallet": 1000,
     "fiat_display_currency": "USD",
-    "strategy": "TankAiRevival",
+    "strategy": "NOTankAi152F",
     "freqaimodel": "PyTorchLSTMRegressor",
     "dataformat_ohlcv": "feather",
     "dataformat_trades": "jsongz",
