@@ -55,22 +55,30 @@
             "enableRateLimit": true,
             "rateLimit": 150
         },
-        "pair_whitelist": [
-            "TURBO/USDT:USDT",
-            "PEPE/USDT:USDT",
-            "DOGE/USDT:USDT",
-            "SUI/USDT:USDT",
-            "ETH/USDT:USDT",
-            "BTC/USDT:USDT"
-        ],
+        "pairlists": [
+            {
+              "method": "VolumePairList",
+              "number_assets": 50,
+              "sort_key": "quoteVolume",
+              "min_value": 10000000
+            }
+          ],
+        //"pair_whitelist": [
+        //    "TURBO/USDT:USDT",
+        //    "PEPE/USDT:USDT",
+        //    "DOGE/USDT:USDT",
+        //    "SUI/USDT:USDT",
+        //    "ETH/USDT:USDT",
+        //    "BTC/USDT:USDT"
+        //],
         "pair_blacklist": [
         ]
     },
-    "pairlists": [
-        {
-            "method": "StaticPairList"
-        }
-    ],
+    //"pairlists": [
+    //    {
+    //        "method": "StaticPairList"
+    //    }
+    //],
     "edge": {
         "enabled": false,
         "process_throttle_secs": 3600,
