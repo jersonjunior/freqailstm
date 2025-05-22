@@ -132,11 +132,7 @@
         "enabled": true,
         "token": "5869949793:AAEUqxNXG41fiRgaNBq0LG1vJd20niUbPyc",
         "chat_id": "164931923"
-        "keyboard": [
-            ["/daily", "/stats", "/balance", "/profit"],
-            ["/status table", "/performance"],
-            ["/reload_config", "/count", "/logs"]
-        ],
+    },
         "notification_settings": {
             "status": "silent",
             "protection_trigger_global": "on",
