@@ -1,15 +1,17 @@
-from typing import Any
+from typing import Dict, Any, List, Tuple, Optional
 
 import torch
 
-from freqtrade.freqai.base_models.BasePyTorchRegressor import BasePyTorchRegressor
+from freqtrade.freqai.base_models.BasePyLSTMTorchRegressor import BasePyLSTMTorchRegressor
 from freqtrade.freqai.data_kitchen import FreqaiDataKitchen
 from freqtrade.freqai.torch.PyTorchDataConvertor import PyTorchDataConvertor, DefaultPyTorchDataConvertor
 from freqtrade.freqai.torch.PyTorchLSTMModel import PyTorchLSTMModel
-from freqtrade.freqai.torch.PyTorchModelTrainer import PyTorchLSTMTrainer
+#from freqtrade.freqai.torch.PyTorchModelTrainer import PyTorchLSTMTrainer
+#import freqtrade.freqai.torch.PyTorchModelTrainer
+from freqtrade.freqai.torch.PyTorchLSTMTrainer import PyTorchLSTMTrainer
 
 
-class PyTorchLSTMRegressor(BasePyTorchRegressor):
+class PyTorchLSTMRegressor(BasePyLSTMTorchRegressor):
     """
     PyTorchLSTMRegressor uses a PyTorch LSTM model to predict a continuous target variable.
 
@@ -27,7 +29,7 @@ class PyTorchLSTMRegressor(BasePyTorchRegressor):
             "dropout_percent": 0.4
         }
     """
-
+    
     @property
     def data_convertor(self) -> PyTorchDataConvertor:
         """Return the default PyTorch data convertor."""
@@ -35,15 +37,19 @@ class PyTorchLSTMRegressor(BasePyTorchRegressor):
 
     def __init__(self, **kwargs) -> None:
         """
-        Initialize the PyTorchLSTMRegressor with model and trainer parameters.
+        Initialize the MultiTargetLSTMRegressor with model and trainer parameters.
         """
         super().__init__(**kwargs)
         config = self.freqai_info.get("model_training_parameters", {})
-        
+
         self.learning_rate: float = config.get("learning_rate", 3e-3)
-        self.model_kwargs: dict[str, Any] = config.get("model_kwargs", {})
-        self.trainer_kwargs: dict[str, Any] = config.get("trainer_kwargs", {})
+        self.model_kwargs: Dict[str, Any] = config.get("model_kwargs", {})
+        self.trainer_kwargs: Dict[str, Any] = config.get("trainer_kwargs", {})
+        self.output_dim: int = config.get("output_dim", 1)  # default to 1 targets
         self.window_size = self.model_kwargs.get('window_size', 5)
+
+        # Determine device
+        self.device = config.get("device", "cuda" if torch.cuda.is_available() else "cpu")
 
         # Validate parameters
         self._validate_parameters()
@@ -56,46 +62,45 @@ class PyTorchLSTMRegressor(BasePyTorchRegressor):
         if not isinstance(self.window_size, int) or self.window_size <= 0:
             raise ValueError(f"Invalid window size: {self.window_size}")
 
-    def fit(self, data_dictionary: dict, dk: FreqaiDataKitchen, **kwargs) -> Any:
+    def fit(self, data_dictionary: Dict, dk: FreqaiDataKitchen, **kwargs) -> Any:
         """
         Train the LSTM model using the provided data.
-
-        :param data_dictionary: Dictionary containing training data features and labels.
-        :param dk: An instance of FreqaiDataKitchen providing data utilities.
-        :return: The trained model.
         """
         try:
             n_features = data_dictionary["train_features"].shape[-1]
             model = PyTorchLSTMModel(input_dim=n_features, **self.model_kwargs)
             model.to(self.device)
 
+
             optimizer = torch.optim.AdamW(model.parameters(), lr=self.learning_rate)
             criterion = torch.nn.MSELoss(reduction='mean')
 
-            temp_trainer = self.get_init_model(dk.pair)
-            if temp_trainer is None:
-                trainer = PyTorchLSTMTrainer(
-                    model=model,
-                    optimizer=optimizer,
-                    criterion=criterion,
-                    device=self.device,
-                    data_convertor=self.data_convertor,
-                    tb_logger=self.tb_logger,
-                    window_size=self.window_size,
-                    **self.trainer_kwargs,
-                )
-            else:
-                trainer = PyTorchLSTMTrainer(
-                    model=temp_trainer.model,
-                    optimizer=temp_trainer.optimizer,
-                    model_meta_data=temp_trainer.model_meta_data,
-                    criterion=criterion,
-                    device=self.device,
-                    data_convertor=self.data_convertor,
-                    tb_logger=self.tb_logger,
-                    window_size=self.window_size,
-                    **self.trainer_kwargs,
-                )
+            trainer = self.get_init_model(dk.pair)
+            if trainer is None:
+                temp_trainer = self.get_init_model(dk.pair)
+                if temp_trainer is None:
+                    trainer = PyTorchLSTMTrainer(
+                        model=model,
+                        optimizer=optimizer,
+                        criterion=criterion,
+                        device=self.device,
+                        data_convertor=self.data_convertor,
+                        tb_logger=self.tb_logger,
+                        window_size=self.window_size,
+                        **self.trainer_kwargs,
+                    )
+                else:
+                    trainer = PyTorchLSTMTrainer(
+                        model=temp_trainer.model,
+                        optimizer=temp_trainer.optimizer,
+                        model_meta_data=temp_trainer.model_meta_data,
+                        criterion=criterion,
+                        device=self.device,
+                        data_convertor=self.data_convertor,
+                        tb_logger=self.tb_logger,
+                        window_size=self.window_size,
+                        **self.trainer_kwargs,
+                    )
 
             trainer.fit(data_dictionary, self.splits)
             self.model = trainer
