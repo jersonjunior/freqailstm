@@ -3,6 +3,7 @@ FROM freqtradeorg/freqtrade:develop_freqairl
 #FROM freqtradeorg/freqtrade:develop
 USER root
 
+RUN sed -i 's|http://archive.ubuntu.com|http://deb.debian.org|g' /etc/apt/sources.list
 RUN apt-get update \
   && apt-get -y install build-essential libssl-dev git libffi-dev libgfortran5 pkg-config cmake gcc
 
