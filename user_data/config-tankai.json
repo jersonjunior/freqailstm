@@ -1,12 +1,12 @@
 {
     "trading_mode": "futures",
     "margin_mode": "isolated",
-    "max_open_trades": 8,
+    "max_open_trades": 10,
     "stake_currency": "USDT",
-    "stake_amount": "unlimited",
+    "stake_amount": 40,
     "tradable_balance_ratio": 0.999,
-    "dry_run_wallet": 1000,
-    "fiat_display_currency": "USD",
+    //"dry_run_wallet": 1000,
+    "fiat_display_currency": "BRL",
     "strategy": "NOTankAi152F",
     "freqaimodel": "PyTorchLSTMRegressor",
     "dataformat_ohlcv": "feather",
@@ -46,8 +46,8 @@
     },
     "exchange": {
         "name": "binance",
-        "key": "",
-        "secret": "",
+        "key": "fGvOFP5Gu2sgxVIrcI9Q4pOdTmExwSUStRgyUq6dD9BB8nGy8ElHj4M8zo3YAUkf",
+        "secret": "bm3URf0Q6swtWfSbFDbYpQeWkqXUEFC8PU6USfMkkdJzAPaOgiYPrKivrpCfCPjP",
         "ccxt_config": {
         },
         "ccxt_async_config": {
@@ -129,9 +129,9 @@
         "remove_pumps": false
     },
     "telegram": {
-        "enabled": false,
-        "token": "",
-        "chat_id": "",
+        "enabled": true,
+        "token": "5869949793:AAEUqxNXG41fiRgaNBq0LG1vJd20niUbPyc",
+        "chat_id": "164931923"
         "keyboard": [
             ["/daily", "/stats", "/balance", "/profit"],
             ["/status table", "/performance"],
@@ -231,14 +231,14 @@
     "api_server": {
         "enabled": true,
         "listen_ip_address": "0.0.0.0",
-        "listen_port": 8080,
+        "listen_port": 8090,
         "verbosity": "error",
         "enable_openapi": false,
         "jwt_secret_key": "",
         "ws_token": "",
         "CORS_origins": [],
-        "username": "freqtrader",
-        "password": "123456"
+        "username": "binance",
+        "password": "@#binance@"
     },
     "bot_name": "freqtrade",
     "initial_state": "running",
