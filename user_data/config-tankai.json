@@ -1,9 +1,9 @@
 {
     "trading_mode": "futures",
     "margin_mode": "isolated",
-    "max_open_trades": 10,
+    "max_open_trades": 5,
     "stake_currency": "USDT",
-    "stake_amount": 40,
+    "stake_amount": 80,
     "tradable_balance_ratio": 1,
     "fiat_display_currency": "USD",
     "strategy": "NOTankAi152F",
@@ -11,7 +11,7 @@
     "dataformat_ohlcv": "feather",
     "dataformat_trades": "jsongz",
     "stoploss_on_exchange": true,
-    "dry_run": true,
+    "dry_run": false,
     "cancel_open_orders_on_exit": false,
     "unfilledtimeout": {
         "unit": "minutes",
