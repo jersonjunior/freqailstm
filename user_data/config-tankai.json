@@ -155,8 +155,9 @@
             },
             "strategy_msg": "silent"
         },
-        "balance_dust_level": 0.01,
+        //"balance_dust_level": 0.01,
     },
+    "balance_dust_level": 0.01,
     "strategy_path": "user_data/strategies",
     "recursive_strategy_search": false,
     "disable_dataframe_checks": false,
