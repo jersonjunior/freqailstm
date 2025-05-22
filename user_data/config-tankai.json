@@ -12,7 +12,7 @@
     "dataformat_ohlcv": "feather",
     "dataformat_trades": "jsongz",
     "stoploss_on_exchange": true,
-    "dry_run": true,
+    "dry_run": false,
     "cancel_open_orders_on_exit": false,
     "unfilledtimeout": {
         "unit": "minutes",
@@ -155,7 +155,7 @@
             },
             "strategy_msg": "silent"
         },
-        "balance_dust_level": 0.01
+        "balance_dust_level": 0.01,
     },
     "strategy_path": "user_data/strategies",
     "recursive_strategy_search": false,
