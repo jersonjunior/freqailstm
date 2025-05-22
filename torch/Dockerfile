@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir optuna \
   && pip install --no-cache-dir datasieve
 
 ADD --keep-git-dir=true https://github.com/jersonjunior/freqailstm.git /opt/freqai-lstm
-WORKDIR /opt/freqai-lstm
+#WORKDIR /opt/freqai-lstm
 
 RUN mkdir -p /freqtrade/user_data/strategies /freqtrade/user_data/freqaimodels \
   && cp user_data/config-tankai.json /freqtrade/user_data/config-torch.json \
