@@ -4,15 +4,14 @@
     "max_open_trades": 10,
     "stake_currency": "USDT",
     "stake_amount": 40,
-    "tradable_balance_ratio": 0.999,
-    //"dry_run_wallet": 1000,
-    "fiat_display_currency": "BRL",
+    "tradable_balance_ratio": 1,
+    "fiat_display_currency": "USD",
     "strategy": "NOTankAi152F",
     "freqaimodel": "PyTorchLSTMRegressor",
     "dataformat_ohlcv": "feather",
     "dataformat_trades": "jsongz",
     "stoploss_on_exchange": true,
-    "dry_run": false,
+    "dry_run": true,
     "cancel_open_orders_on_exit": false,
     "unfilledtimeout": {
         "unit": "minutes",
@@ -129,10 +128,14 @@
         "remove_pumps": false
     },
     "telegram": {
-        "enabled": true,
-        "token": "5869949793:AAEUqxNXG41fiRgaNBq0LG1vJd20niUbPyc",
-        "chat_id": "164931923"
-    },
+        "enabled": false,
+        "token": "",
+        "chat_id": "",
+        "keyboard": [
+            ["/daily", "/stats", "/balance", "/profit"],
+            ["/status table", "/performance"],
+            ["/reload_config", "/count", "/logs"]
+        ],
         "notification_settings": {
             "status": "silent",
             "protection_trigger_global": "on",
@@ -154,8 +157,8 @@
                 "custom_exit": "silent"
             },
             "strategy_msg": "silent"
-        }
-        "balance_dust_level": 0.01,
+        },
+        "balance_dust_level": 0.01
     },
     "strategy_path": "user_data/strategies",
     "recursive_strategy_search": false,
@@ -233,8 +236,8 @@
         "jwt_secret_key": "",
         "ws_token": "",
         "CORS_origins": [],
-        "username": "binance",
-        "password": "@#binance@"
+        "username": "freqtrader",
+        "password": "123456"
     },
     "bot_name": "freqtrade",
     "initial_state": "running",
