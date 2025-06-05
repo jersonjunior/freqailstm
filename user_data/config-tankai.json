@@ -6,7 +6,7 @@
     "stake_amount": 80,
     "tradable_balance_ratio": 1,
     "fiat_display_currency": "USD",
-    "strategy": "NOTankAi152",
+    "strategy": "AlexBattleTankKiller",
     "freqaimodel": "PyTorchLSTMRegressor",
     "dataformat_ohlcv": "feather",
     "dataformat_trades": "jsongz",
