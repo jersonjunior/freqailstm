@@ -131,7 +131,7 @@
             "BANANA/USDT:USDT",
             "THETA/USDT:USDT",
             "LTC/USDT:USDT",
-            "BTC/USDT:USDT""
+            "BTC/USDT:USDT"
         ],
         "pair_blacklist": [
         ]
