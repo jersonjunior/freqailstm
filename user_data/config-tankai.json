@@ -11,7 +11,7 @@
     "dataformat_ohlcv": "feather",
     "dataformat_trades": "jsongz",
     "stoploss_on_exchange": true,
-    "dry_run": true,
+    "dry_run": false,
     "cancel_open_orders_on_exit": false,
     "unfilledtimeout": {
         "unit": "minutes",
