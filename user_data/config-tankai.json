@@ -3,7 +3,7 @@
     "margin_mode": "isolated",
     "max_open_trades": 10,
     "stake_currency": "USDT",
-    "stake_amount": 80,
+    "stake_amount": 70,
     "tradable_balance_ratio": 1,
     "fiat_display_currency": "USD",
     "strategy": "AlexBattleTankKiller",
@@ -156,9 +156,9 @@
         "remove_pumps": false
     },
     "telegram": {
-        "enabled": false,
-        "token": "",
-        "chat_id": "",
+        "enabled": true,
+        "token": "7914475124:AAGpybbGcM_V_Iul1gokFX9ZdV5pui7nOW4",
+        "chat_id": "164931923",
         "keyboard": [
             ["/daily", "/stats", "/balance", "/profit"],
             ["/status table", "/performance"],
@@ -264,8 +264,8 @@
         "jwt_secret_key": "",
         "ws_token": "",
         "CORS_origins": [],
-        "username": "freqtrader",
-        "password": "123456"
+        "username": "binance",
+        "password": "@#binance@#"
     },
     "bot_name": "freqtrade",
     "initial_state": "running",
