@@ -73,7 +73,7 @@ class AlexBattleTankKiller(IStrategy):
     use_exit_signal = True
     ignore_roi_if_entry_signal = True
 
-    max_entry_position_adjustment = 1
+    max_entry_position_adjustment = 2
     process_only_new_candles = True
 
     # DCA parameters
