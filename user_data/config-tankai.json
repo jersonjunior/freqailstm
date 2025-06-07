@@ -157,7 +157,7 @@
     },
     "telegram": {
         "enabled": true,
-        "token": "7914475124:AAGpybbGcM_V_Iul1gokFX9ZdV5pui7nOW4",
+        "token": "5869949793:AAEUqxNXG41fiRgaNBq0LG1vJd20niUbPyc",
         "chat_id": "164931923",
         "keyboard": [
             ["/daily", "/stats", "/balance", "/profit"],
